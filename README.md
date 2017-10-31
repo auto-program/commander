@@ -6,13 +6,11 @@ Most Powerful Shell Script Command Framework for Developers.Be your own commande
 # Install
 
 ````
-$: git clone 
+$: git clone git@github.com:auto-program/commander.git
 $: cd commmander
 $: ./bootstrap.sh
-directory created [/Users/liujianping/commander/configs]
 please input your editor [default: vi]: code
-please input your data root directory [default: /Users/liujianping/commander/volumns]:
-directory created [/Users/liujianping/commander/volumns].
+please input your data root directory [default:/Users/liujianping/commander/volumns]:
 
 ============================================================
  NOTE
@@ -25,13 +23,13 @@ or for zsh:
     echo 'bashcompinit' >> ~/.zshrc
     echo 'source /Users/liujianping/commander/command.sh' >> ~/.zshrc
     source ~/.zshrc
-run "cmd help" to print all available functions
+run "cmd -h" to print all available functions
 ````
 
 # Add a new customer command
 
 ````
-$: cmd help
+$: cmd -h
 
 	                                                  __
 	  _________  ____ ___  ____ ___  ____ _____  ____/ /__  _____
@@ -61,29 +59,47 @@ cmd-vpn        启停VPN服务命令
 # add a new custom command [demo]
 $: cmd add demo
 
+# edit cmd-demo script
 $: cmd edit demo
 
+# execute cmd-demo
+$: cmd-demo
+
+or 
+
+# execute cmd-demo in another way
 $: cmd demo
 
+# remove custom command demo
 $: cmd del demo
 
 ````
 
 # Most Useful Commands for Mac User
 
-> cmd lock
+> cmd-lock 
 
-> cmd reboot
+shell command for mac screen lock
 
-> cmd shutdown
+> cmd-reboot
 
-> cmd vpn start [vpn-name]
+shell command for reboot your mac
+
+> cmd-shutdown
+
+shell command for shutdown your mac
+
+> cmd-vpn start [vpn-name]
+
+shell command for quick start vpn network
+
+> cmd-ssh
+
+shell command for ssh keys & ssh remote server connections management.
 
 # Most Useful Commands for Developer
 
 > cmd net
-
-> cmd ssh
 
 > cmd sshd
 
