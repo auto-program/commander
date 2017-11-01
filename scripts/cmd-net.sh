@@ -7,7 +7,7 @@ _cf_load_ net
 _check_ "docker"
 ret=$?
 if [[ "$ret" == "1" ]]; then 
-	_error_ "please visit https://www.docker.com , install [ Docker Toolbox ] first."
+	_error_ "cmd-net: please visit https://www.docker.com , install [ Docker Toolbox ] first."
 fi
 
 _check_ "jq"
@@ -19,7 +19,7 @@ if [[ "$ret" == "1" ]]; then
 fi
 
 function cmd-net(){
-	__doc__ 基于docker的网络环境
+	__doc__ docker network management
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-net [create | remove | ls]"

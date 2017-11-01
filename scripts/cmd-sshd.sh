@@ -17,8 +17,8 @@ function _cmd_sshd_setup_(){
 	fi
 	_sshd_address_=$n
 
-	echo -n -s "please set root password: "
-	read n;
+	echo -n "please set root password: "
+	read -s n;
 	if [[ $n == "" ]]; then
 		echo -n "root password can't be empty."
 		return
@@ -64,7 +64,7 @@ EOF
 
 
 function cmd-sshd(){
-	__doc__ 基于docker的sshd服务
+	__doc__ docker sshd service
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-sshd [ setup | start | stop | bash ]"

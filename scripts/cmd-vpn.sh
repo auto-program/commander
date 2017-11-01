@@ -5,7 +5,7 @@
 _cf_load_ vpn
 
 function cmd-vpn(){
-	__doc__ 启停VPN服务命令
+	__doc__ pppoe service command for mac
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-vpn [start | stop] [vpn-name]"

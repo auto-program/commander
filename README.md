@@ -7,26 +7,13 @@ Most Powerful Shell Script Command Framework for Developers.Be your own commande
 
 ````
 $: git clone git@github.com:auto-program/commander.git
-$: cd commmander
-$: ./bootstrap.sh
-please input your editor [default: vi]: code
-please input your data root directory [default:/Users/liujianping/commander/volumns]:
 
-============================================================
- NOTE
-============================================================
-please execute:
-    echo 'source /Users/liujianping/commander/command.sh' >> ~/.bash_profile
-    source ~/.bash_profile
-or for zsh:
-    echo 'autoload bashcompinit' >> ~/.zshrc
-    echo 'bashcompinit' >> ~/.zshrc
-    echo 'source /Users/liujianping/commander/command.sh' >> ~/.zshrc
-    source ~/.zshrc
-run "cmd -h" to print all available functions
+$: cd commmander
+
+$: ./bootstrap.sh
 ````
 
-# Add a new customer command
+# Add a new custom command
 
 ````
 $: cmd -h
@@ -38,23 +25,23 @@ $: cmd -h
 	\___/\____/_/ /_/ /_/_/ /_/ /_/\__,_/_/ /_/\__,_/\___/_/
 
 
-commander [cmd] version 0.0.2
+commander [cmd] version 0.0.3
 
-cmd-add        新增子命令
-cmd-del        删除子命令
-cmd-edit       编辑子命令
-cmd-github     GitHub管理
-cmd-help       帮助
-cmd-list       列举子命令
-cmd-lock       Mac 锁屏
-cmd-mysql      基于docker的MySQL服务
-cmd-net        基于docker的网络环境
-cmd-reboot     Mac 重启
-cmd-redis      基于docker的Redis服务
-cmd-shutdown   Mac 关机
-cmd-ssh        SSH密钥与远程主机管理
-cmd-sshd       基于docker的sshd服务
-cmd-vpn        启停VPN服务命令
+cmd-add        add a custom command
+cmd-del        remove a custom command
+cmd-edit       edit a custom command
+cmd-github     github user | repo management
+cmd-help       help
+cmd-list       list all custom commands
+cmd-lock       lock screen command for mac
+cmd-mysql      docker mysql service
+cmd-net        docker network management
+cmd-reboot     reboot command for mac
+cmd-redis      docker redis service
+cmd-shutdown   shutdown command for mac
+cmd-ssh        ssh key | connection management
+cmd-sshd       docker sshd service
+cmd-vpn        pppoe service command for mac
 
 # add a new custom command [demo]
 $: cmd add demo
@@ -65,9 +52,7 @@ $: cmd edit demo
 # execute cmd-demo
 $: cmd-demo
 
-or 
-
-# execute cmd-demo in another way
+# or execute cmd-demo in another way
 $: cmd demo
 
 # remove custom command demo
@@ -101,10 +86,59 @@ shell command for ssh keys & ssh remote server connections management.
 
 > cmd net
 
+docker network command.
+
+```` 
+$: cmd net create
+
+$: cmd net ls
+
+$: cmd net remove
+
+````
+
 > cmd sshd
+
+````
+$: cmd sshd setup
+
+$: cmd sshd start
+
+$: cmd net ls
+
+$: cmd sshd stop
+
+````
+
+you can use *cmd ssh con* to create a connect to the cmd-sshd server.
 
 > cmd mysql
 
+````
+$: cmd mysql setup
+
+$: cmd mysql start
+
+$: cmd net ls
+
+$: cmd mysql cli
+
+$: cmd mysql stop
+````
+
+
 > cmd redis
+
+````
+$: cmd redis setup
+
+$: cmd redis start
+
+$: cmd net ls
+
+$: cmd redis cli
+
+$: cmd redis stop
+````
 
 > cmd github

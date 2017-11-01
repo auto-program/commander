@@ -4,6 +4,12 @@
 
 _cf_load_ redis
 
+_check_ "docker"
+ret=$?
+if [[ "$ret" == "1" ]]; then 
+	_error_ "cmd-redis: please visit https://www.docker.com , install [ Docker Toolbox ] first."
+fi
+
 _check_ "redis-cli"
 ret=$?
 if [[ "$ret" == "1" ]]; then 
@@ -39,7 +45,7 @@ function _cmd_redis_setup_(){
 }
 
 function cmd-redis(){
-	__doc__ 基于docker的Redis服务
+	__doc__ docker redis service
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-redis [setup | start | stop | bash | cli]"

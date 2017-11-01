@@ -4,6 +4,12 @@
 
 _cf_load_ mysql
 
+_check_ "docker"
+ret=$?
+if [[ "$ret" == "1" ]]; then 
+	_error_ "cmd-mysql: please visit https://www.docker.com , install [ Docker Toolbox ] first."
+fi
+
 _check_ "mycli"
 ret=$?
 if [[ "$ret" == "1" ]]; then 
@@ -28,7 +34,7 @@ function _cmd_mysql_setup_(){
 	_mysql_password_=$cmd_mysql_password
 	if [[ $_mysql_password_ == "" ]]; then
 		echo -n "please set root password: "
-		read n;
+		read -s n;
 		if [[ $n == "" ]]; then
 			echo -n "root password can't be empty."
 			return
@@ -53,7 +59,7 @@ function _cmd_mysql_setup_(){
 }
 
 function cmd-mysql(){
-	__doc__  基于docker的MySQL服务
+	__doc__  docker mysql service
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-mysql [setup | start | stop | bash | cli]"

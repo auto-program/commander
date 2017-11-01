@@ -5,6 +5,6 @@
 _cf_load_ reboot
 
 function cmd-reboot(){
-	__doc__ Mac 重启
+	__doc__ reboot command for mac
 	sudo shutdown -r now
 }

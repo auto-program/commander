@@ -5,12 +5,12 @@ function _cmd_complete() {
 }
 
 function _cmd_version_(){
-    export _COMMANDER_VERSION=0.0.2
+    export _COMMANDER_VERSION=0.0.3
     echo "commander [cmd] version $_COMMANDER_VERSION"
 }
 
 function cmd-help(){
-    __doc__ 帮助
+    __doc__ help
     _cmd_show_logo_
     echo   
     _cmd_version_
@@ -19,7 +19,7 @@ function cmd-help(){
 }
 
 function cmd-add(){
-    __doc__ 新增子命令
+    __doc__ add a custom command
     command="$1"
 	case "$command" in 
 	"" )
@@ -55,7 +55,7 @@ EOF
 }
 
 function cmd-edit(){
-    __doc__ 编辑子命令
+    __doc__ edit a custom command
     if [[ $editor == "" ]]; then
         export editor=vi
     fi
@@ -78,10 +78,12 @@ function cmd-edit(){
 }
 
 function cmd-del(){
-    __doc__ 删除子命令
+    __doc__ remove a custom command
     mkdir -p $_COMMANDER_HOME/scripts/rms
 	for i in $@ ; do
 		if [ -e $_COMMANDER_HOME/scripts/cmd-$i.sh ]; then
+			rm -rf $_COMMANDER_HOME/configs/$1
+			rm -rf $_COMMANDER_HOME/volumns/$1
 			unset -f cmd-$i
 			mv $_COMMANDER_HOME/scripts/cmd-$i.sh $_COMMANDER_HOME/scripts/rms/$i
 			echo "warn: remove command (cmd-$i)"
@@ -95,7 +97,7 @@ function cmd-del(){
 }
 
 function cmd-list(){
-    __doc__ 列举子命令
+    __doc__ list all custom commands
     if [ -z "$(ls $_COMMANDER_HOME/scripts)" ]; then
 		return
 	fi

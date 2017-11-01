@@ -5,6 +5,6 @@
 _cf_load_ shutdown
 
 function cmd-shutdown(){
-	__doc__ Mac 关机
+	__doc__ shutdown command for mac
 	sudo shutdown -h now
 }
