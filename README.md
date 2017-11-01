@@ -3,7 +3,7 @@ COMMANDER
 
 Most Powerful Shell Script Command Framework for Developers.Be your own commander, have fun :)
 
-[![asciicast](https://asciinema.org/a/145221.png)](https://asciinema.org/a/145221)
+<a href="https://asciinema.org/a/145219?autoplay=1"><img src="https://asciinema.org/a/145219.png" width="80%"/></a>
 
 # Install
 
