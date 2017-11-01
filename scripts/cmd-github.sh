@@ -74,7 +74,7 @@ function _cmd_github_switch_(){
 }
 
 function cmd-github(){
-	__doc__ github user | repo management
+	__doc__ github user and repo management
 
 	case "$1" in
 	"" )

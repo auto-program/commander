@@ -161,7 +161,7 @@ _ssh_agent_
 _ssh_key_load_
 
 function cmd-ssh(){
-	__doc__  ssh key | connection management
+	__doc__  ssh key and connection management
 	case "$1" in
 	"" | -h )
 		echo "Usage: cmd-ssh [ key | connect(con | conn) | copyid(copy) | list(ls) | reload ]"
