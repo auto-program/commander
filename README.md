@@ -3,6 +3,8 @@ COMMANDER
 
 Most Powerful Shell Script Command Framework for Developers.Be your own commander, have fun :)
 
+[![asciicast](https://asciinema.org/a/145221.png)](https://asciinema.org/a/145221)
+
 # Install
 
 ````
