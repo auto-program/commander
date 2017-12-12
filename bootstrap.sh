@@ -30,6 +30,24 @@ fi
 # configs/setup.sh
 _cf_var_write_ "setup.sh" "editor" $editor
 
+echo -n "git user name: "
+read name
+if [[ "$name" == "" ]]; then
+	echo "name can't empty"
+	return
+fi
+
+echo -n "git user email: "
+read email
+if [[ "$email" == "" ]]; then
+	echo "email can't empty"
+	return
+fi
+
+# configs/setup.cf	
+_cf_append_ "setup.cf" "git config --local user.name "\"$name\"
+_cf_append_ "setup.cf" "git config --local user.email "\"$email\"
+
 # volumns
 read -p "please input your data root directory [default: $_COMMANDER_HOME/volumns]: " data_dir
 if [[ $data_dir == "" ]]; then

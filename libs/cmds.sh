@@ -113,7 +113,8 @@ function _cmd_initialize_(){
         cmd-help
 	fi
 	export _cmd_inited_=1
-    _cf_load_
+	_cf_bash_ "setup.cf"
+	_cf_load_
 }
 
 function _cmd_show_logo_(){
