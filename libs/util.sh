@@ -45,6 +45,28 @@ function _include_(){
 	done
 }
 
+function _folder_(){
+	echo $(basename $(pwd))
+}
+
+function _volumn_init_(){
+	volumn_dir=$_COMMANDER_HOME/volumns
+    for d in $@ ; do
+		volumn_dir=$volumn_dir/$d
+		if [[ ! -d $volumn_dir ]]; then
+			_exec_ mkdir -p $volumn_dir
+		fi
+    done
+}
+
+function _volumn_(){
+	volumn_dir=$_COMMANDER_HOME/volumns
+	for d in $@ ; do
+		volumn_dir=$volumn_dir/$d
+	done
+	echo $volumn_dir
+}
+
 function _cf_load_(){
     cf_dir=$_COMMANDER_HOME/configs
     for d in $@ ; do
