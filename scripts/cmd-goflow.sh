@@ -30,7 +30,7 @@ function _goflow_setup_(){
 }
 
 function cmd-goflow(){
-	__doc__ 
+	__doc__ go flow switch command 
 	case "$1" in
 	"" | "help" | -h )
 		echo "Usage: cmd-goflow [setup | (username | organization | repository)]"
